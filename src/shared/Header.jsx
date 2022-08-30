@@ -1,6 +1,13 @@
-import Todo from "../DEVELOPMENT/Todo";
-import { FaRegUserCircle } from "react-icons/fa";
+import {
+  BsSunFill,
+  BsMoonFill,
+  BsFillPersonFill,
+  BsArchiveFill,
+} from "react-icons/bs";
+import { FaStar } from "react-icons/fa";
+
 import Searchbar from "../components/Searchbar";
+import ActionButton from "../components/ActionButton";
 
 /*
  * Navbar will have
@@ -19,18 +26,21 @@ const Header = () => {
     <header>
       <nav>
         <ul>
-          <li className="logo">Anime</li>
-          <li>
+          <li className="logo">Amicon</li>
+          <li className="search-bar-container">
             <Searchbar />
           </li>
           <li>
-            <Todo context="Bookmark" />
+            <ActionButton content={<BsSunFill />} />
           </li>
           <li>
-            <Todo context="Rated" />
+            <ActionButton content={<BsArchiveFill />} />
           </li>
           <li>
-            <FaRegUserCircle color="white" />
+            <ActionButton content={<FaStar />} />
+          </li>
+          <li>
+            <ActionButton content={<BsFillPersonFill />} />
           </li>
         </ul>
       </nav>
