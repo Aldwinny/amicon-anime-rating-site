@@ -7,6 +7,14 @@ const AnimeCarousel = ({ title }) => {
       <div className="division-solid"></div>
       <ul className="carousel-items">
         {/* This should be a list UL & LI */}
+        <AnimeCarouselItem
+          genre={["Psychological horror", "comedy", "romance"]}
+        />
+        <AnimeCarouselItem />
+        <AnimeCarouselItem />
+        <AnimeCarouselItem />
+        <AnimeCarouselItem />
+        <AnimeCarouselItem />
         <AnimeCarouselItem />
         <AnimeCarouselItem />
         <AnimeCarouselItem />

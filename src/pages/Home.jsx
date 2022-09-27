@@ -1,11 +1,15 @@
 import AnimeCarousel from "../components/AnimeCarousel";
+import Sidebar from "../shared/Sidebar";
 
 const Home = () => {
   return (
     <main>
-      <AnimeCarousel title="New" />
-      <AnimeCarousel title="latest" />
-      <AnimeCarousel title="Horror" />
+      <Sidebar />
+      <div>
+        <AnimeCarousel title="New" />
+        <AnimeCarousel title="latest" />
+        <AnimeCarousel title="Horror" />
+      </div>
     </main>
   );
 };
