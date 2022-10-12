@@ -1,4 +1,4 @@
-import { BsFillArchiveFill } from "react-icons/bs";
+import SidebarListItem from "../components/SidebarListItem";
 
 const Sidebar = () => {
   /**
@@ -7,33 +7,18 @@ const Sidebar = () => {
   return (
     <aside>
       <ul className="sidebar-items">
-        <li>
-          <BsFillArchiveFill />
-          <div>Genres</div>
-        </li>
-        <li>
-          <BsFillArchiveFill />
-          <div>History</div>
-        </li>
-        <li>
-          <BsFillArchiveFill />
-          <div>Collections</div>
-        </li>
-        <li>
-          <BsFillArchiveFill />
-          <div>Favorites</div>
-        </li>
-        <li>
-          <BsFillArchiveFill />
-          <div>Rated</div>
-        </li>
+        <SidebarListItem text="Genres" />
+        <SidebarListItem text="History" />
+        <SidebarListItem text="Collections" />
+        <SidebarListItem text="Favorites" />
+        <SidebarListItem text="Rated" />
       </ul>
       <ul className="sidebar-links">
         <li>About</li>
         <li>Contact us</li>
       </ul>
       <p className="footnote">
-        &copy; Amicon inc.
+        &copy; 2022 Amicon inc.
         <br />
         Not a real company
       </p>

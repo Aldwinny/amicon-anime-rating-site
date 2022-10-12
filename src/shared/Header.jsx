@@ -21,7 +21,7 @@ import ActionButton from "../components/ActionButton";
  * 3.
  */
 
-const Header = () => {
+const Header = ({ isDark, darkModeCallback }) => {
   return (
     <header>
       <nav>
@@ -31,7 +31,10 @@ const Header = () => {
             <Searchbar />
           </li>
           <li>
-            <ActionButton content={<BsSunFill />} />
+            <ActionButton
+              content={isDark ? <BsMoonFill /> : <BsSunFill />}
+              action={darkModeCallback}
+            />
           </li>
           <li>
             <ActionButton content={<BsArchiveFill />} />

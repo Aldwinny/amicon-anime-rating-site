@@ -10,6 +10,7 @@ const AnimeCarouselItem = ({
   starred,
   starCallback,
   genre,
+  onClick,
 }) => {
   const [starState, setStarState] = useState(starred);
   const changeStarState = () => {
@@ -19,14 +20,14 @@ const AnimeCarouselItem = ({
   return (
     <li>
       <div>
-        <img alt="anime frame" src={imglink}></img>
+        <img alt="anime frame" src={imglink} onClick={onClick}></img>
         <div className="carousel-title">
-          <h2>{title}</h2>
+          <h2 onClick={onClick}>{title}</h2>
           <div onClick={changeStarState}>
             {starState ? (
-              <AiFillStar color="STAR_COLOR" />
+              <AiFillStar color={STAR_COLOR} />
             ) : (
-              <AiOutlineStar color="STAR_COLOR" />
+              <AiOutlineStar color={STAR_COLOR} />
             )}
           </div>
         </div>
@@ -38,12 +39,15 @@ const AnimeCarouselItem = ({
 };
 
 AnimeCarouselItem.defaultProps = {
-  title: "That time ",
+  title: "That time I got reincarnated as an anime title",
   imglink:
     "https://i.pinimg.com/736x/31/76/fd/3176fda4e0f16e61b83833ad2e7838b1.jpg",
   starred: true,
   starCallback: (val) => {
     console.log(`TEMP_LOG: Changed star state to ${val}`);
+  },
+  onClick: () => {
+    console.log("No acction added.");
   },
   genre: [],
 };

@@ -80,7 +80,7 @@ main > div {
 aside {
   position: fixed;
 
-  height: 90%;
+  height: 100%;
   width: 250px;
 
   background-color: var(--lilac-2);
@@ -212,7 +212,21 @@ main > div > section:first-of-type {
 }
 
 .sidebar-items li {
-  margin-bottom: 15px;
+  padding: 10px 5px 10px 5px;
+  border-radius: 5px;
+}
+
+.sidebar-items a {
+  color: var(--purple-2);
+  display: block;
+}
+
+.sidebar-items li:hover {
+  background-color: var(--lilac-3);
+}
+
+.sidebar-items a:active {
+  color: var(--dark-gray-2);
 }
 
 .sidebar-items div {
@@ -220,7 +234,7 @@ main > div > section:first-of-type {
   vertical-align: top;
   font-weight: 600;
 
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .sidebar-items svg {
@@ -234,7 +248,7 @@ main > div > section:first-of-type {
 }
 
 .footnote {
-  margin-bottom: 25px;
+  margin-bottom: 85px;
 }
 
 .sidebar-items,
@@ -246,7 +260,7 @@ main > div > section:first-of-type {
 .sidebar-links li,
 .sidebar-items li,
 .footnote {
-  margin-left: 15px;
+  padding-left: 25px;
 }
 
 .carousel-wrapper {
@@ -309,6 +323,10 @@ main > div > section:first-of-type {
   height: 270px;
 }
 
+.carousel-items img:hover {
+  cursor: pointer;
+}
+
 .carousel-title {
   text-align: left;
   display: flex;
@@ -322,9 +340,19 @@ main > div > section:first-of-type {
 
   width: 200px;
 
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-underline-offset: 2px;
+
+  transition-duration: 250ms;
+}
+
+.carousel-title h2:hover {
+  color: var(--purple-2);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* The things we do for perfection */
