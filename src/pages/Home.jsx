@@ -3,14 +3,14 @@ import Sidebar from "../shared/Sidebar";
 
 const Home = ({ callbacks }) => {
   return (
-    <main>
+    <>
       <Sidebar />
-      <div>
+      <div className="content">
         <AnimeCarousel title="New" callback={callbacks.AnimeInfo} />
         <AnimeCarousel title="latest" />
         <AnimeCarousel title="Horror" />
       </div>
-    </main>
+    </>
   );
 };
 

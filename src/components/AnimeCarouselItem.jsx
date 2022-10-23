@@ -1,42 +1,85 @@
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { useState } from "react";
 import Chips from "./Chips";
+import { Component } from "react";
 
 const STAR_COLOR = "#4a2f98";
 
-const AnimeCarouselItem = ({
-  title,
-  imglink,
-  starred,
-  starCallback,
-  genre,
-  onClick,
-}) => {
-  const [starState, setStarState] = useState(starred);
-  const changeStarState = () => {
-    setStarState(!starState);
-    starCallback(!starState);
-  };
-  return (
-    <li>
-      <div>
-        <img alt="anime frame" src={imglink} onClick={onClick}></img>
-        <div className="carousel-title">
-          <h2 onClick={onClick}>{title}</h2>
-          <div onClick={changeStarState}>
-            {starState ? (
-              <AiFillStar color={STAR_COLOR} />
-            ) : (
-              <AiOutlineStar color={STAR_COLOR} />
-            )}
+// const AnimeCarouselItem = ({
+//   title,
+//   imglink,
+//   starred,
+//   starCallback,
+//   genre,
+//   onClick,
+// }) => {
+//   const [starState, setStarState] = useState(starred);
+//   const changeStarState = () => {
+//     setStarState(!starState);
+//     starCallback(!starState);
+//   };
+//   return (
+//     <li>
+//       <div>
+//         <img alt="anime frame" src={imglink} onClick={onClick}></img>
+//         <div className="carousel-title">
+//           <h2 onClick={onClick}>{title}</h2>
+//           <div onClick={changeStarState}>
+//             {starState ? (
+//               <AiFillStar color={STAR_COLOR} />
+//             ) : (
+//               <AiOutlineStar color={STAR_COLOR} />
+//             )}
+//           </div>
+//         </div>
+//         <Chips items={genre} />
+//         <p>Do we even have descriptions or something?</p>
+//       </div>
+//     </li>
+//   );
+// };
+
+class AnimeCarouselItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      starState: props.starred,
+    };
+    this.toAnimeInfo = this.toAnimeInfo.bind(this);
+  }
+
+  toAnimeInfo(e) {
+    this.props.onClick(e);
+  }
+
+  render() {
+    const { title, imglink, starCallback, genre, onClick } = this.props;
+    const starState = this.state.starState;
+    return (
+      <li>
+        <div onClick={this.toAnimeInfo}>
+          <img alt="anime frame" src={imglink}></img>
+          <div className="carousel-title">
+            <h2>{title}</h2>
+            <div
+              onClick={() => {
+                starCallback();
+                this.setState({ starState: !starState });
+              }}
+            >
+              {starState ? (
+                <AiFillStar color={STAR_COLOR} />
+              ) : (
+                <AiOutlineStar color={STAR_COLOR} />
+              )}
+            </div>
           </div>
+          <Chips items={genre} />
+          <p>Do we even have descriptions or something?</p>
         </div>
-        <Chips items={genre} />
-        <p>Do we even have descriptions or something?</p>
-      </div>
-    </li>
-  );
-};
+      </li>
+    );
+  }
+}
 
 AnimeCarouselItem.defaultProps = {
   title: "That time I got reincarnated as an anime title",

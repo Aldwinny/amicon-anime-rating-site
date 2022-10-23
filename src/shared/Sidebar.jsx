@@ -1,3 +1,11 @@
+import {
+  BsArchiveFill,
+  BsFillClockFill,
+  BsFillCollectionPlayFill,
+  BsFillHeartFill,
+  BsFillStarFill,
+} from "react-icons/bs";
+
 import SidebarListItem from "../components/SidebarListItem";
 
 const Sidebar = () => {
@@ -7,11 +15,14 @@ const Sidebar = () => {
   return (
     <aside>
       <ul className="sidebar-items">
-        <SidebarListItem text="Genres" />
-        <SidebarListItem text="History" />
-        <SidebarListItem text="Collections" />
-        <SidebarListItem text="Favorites" />
-        <SidebarListItem text="Rated" />
+        <SidebarListItem text="Genres" icon={<BsArchiveFill />} />
+        <SidebarListItem text="History" icon={<BsFillClockFill />} />
+        <SidebarListItem
+          text="Collections"
+          icon={<BsFillCollectionPlayFill />}
+        />
+        <SidebarListItem text="Favorites" icon={<BsFillHeartFill />} />
+        <SidebarListItem text="Rated" icon={<BsFillStarFill />} />
       </ul>
       <ul className="sidebar-links">
         <li>About</li>

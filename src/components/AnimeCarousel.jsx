@@ -6,7 +6,7 @@ const AnimeCarousel = ({ title, callback }) => {
   items.push(
     <AnimeCarouselItem
       genre={["Psychological horror", "comedy", "romance"]}
-      onClick={() => console.log(callback())}
+      onClick={callback}
     />
   );
 

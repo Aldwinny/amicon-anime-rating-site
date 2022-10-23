@@ -1,4 +1,4 @@
-import { BsFillArchiveFill } from "react-icons/bs";
+import { MdErrorOutline } from "react-icons/md";
 
 const SidebarListItem = ({ icon, link, text }) => {
   return (
@@ -12,7 +12,7 @@ const SidebarListItem = ({ icon, link, text }) => {
 };
 
 SidebarListItem.defaultProps = {
-  icon: <BsFillArchiveFill />,
+  icon: <MdErrorOutline />,
   link: "/",
   text: "unknown",
 };

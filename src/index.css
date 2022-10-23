@@ -47,6 +47,7 @@ body.light-mode {
 }
 
 nav {
+  z-index: 1;
   position: fixed;
   width: 100vw;
   top: 0;
@@ -73,15 +74,17 @@ main {
   margin-top: 4.75em;
 }
 
-main > div {
-  margin-left: 250px;
+main > div.content {
+  margin-left: 200px;
 }
 
 aside {
   position: fixed;
 
   height: 100%;
-  width: 250px;
+  width: 200px;
+
+  font-size: 0.9em;
 
   background-color: var(--lilac-2);
   border-right: 1px dashed var(--purple-1);
@@ -208,17 +211,18 @@ main > div > section:first-of-type {
 }
 
 .sidebar-items {
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .sidebar-items li {
   padding: 10px 5px 10px 5px;
   border-radius: 5px;
+  display: block;
 }
 
 .sidebar-items a {
   color: var(--purple-2);
-  display: block;
+  display: inline;
 }
 
 .sidebar-items li:hover {
@@ -238,7 +242,7 @@ main > div > section:first-of-type {
 }
 
 .sidebar-items svg {
-  width: 25px;
+  width: 20px;
   height: auto;
 }
 
@@ -248,7 +252,7 @@ main > div > section:first-of-type {
 }
 
 .footnote {
-  margin-bottom: 85px;
+  margin-bottom: 95px;
 }
 
 .sidebar-items,
@@ -260,7 +264,7 @@ main > div > section:first-of-type {
 .sidebar-links li,
 .sidebar-items li,
 .footnote {
-  padding-left: 25px;
+  padding-left: 20px;
 }
 
 .carousel-wrapper {
@@ -313,6 +317,13 @@ main > div > section:first-of-type {
   /* Temporary (to follow figma design)*/
   width: 236px;
   height: 454px;
+
+  transition: 200ms;
+}
+
+.carousel-items > li:hover {
+  transform: translate(0, -10px);
+  cursor: pointer;
 }
 
 .carousel-items > li > div {
@@ -321,10 +332,6 @@ main > div > section:first-of-type {
 
 .carousel-items img {
   height: 270px;
-}
-
-.carousel-items img:hover {
-  cursor: pointer;
 }
 
 .carousel-title {
@@ -352,7 +359,6 @@ main > div > section:first-of-type {
 .carousel-title h2:hover {
   color: var(--purple-2);
   text-decoration: underline;
-  cursor: pointer;
 }
 
 /* The things we do for perfection */
@@ -391,7 +397,7 @@ main > div > section:first-of-type {
   font-size: clamp(10px, 3vw, 0.8em);
 
   margin: 0 5px 4px 5px;
-  padding: 3px 5px 4px 5px;
+  padding: 3px 7px 4px 7px;
 
   background-color: var(--purple-1);
   color: var(--text-dark);
