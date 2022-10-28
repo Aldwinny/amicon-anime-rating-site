@@ -20,8 +20,8 @@ function App() {
     let el = event.target;
 
     if (
-      el == testArray[0] ||
-      el == testArray[1] ||
+      el === testArray[0] ||
+      el === testArray[1] ||
       testArray[1].contains(el) ||
       testArray[0].contains(el)
     ) {
@@ -50,6 +50,7 @@ function App() {
           <Route path="/u/collections" element={<ErrorPage />} />
           <Route path="/u/favorites" element={<ErrorPage />} />
           <Route path="/u/rated" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
     </>
