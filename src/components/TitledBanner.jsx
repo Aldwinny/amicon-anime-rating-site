@@ -9,8 +9,7 @@ const TitledBanner = ({ title, alt, imglink }) => {
 
 TitledBanner.defaultProps = {
   alt: "banner",
-  imglink:
-    "https://cdn.myanimelist.net/s/common/uploaded_files/1571491125-6c18d311b8b4ee64468b2441b2a401c3.jpeg", // "https://via.placeholder.com/350x150"
+  imglink: "https://pbs.twimg.com/media/Eo-TYK3XEAI8adM?format=jpg&name=large", // "https://via.placeholder.com/350x150"
 };
 
 export default TitledBanner;

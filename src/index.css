@@ -18,6 +18,10 @@
   --func-transparent: rgba(0, 0, 0, 0);
   /* Used in customized horizontal scroller to give the thumb color */
   --func-scroll-thumb: rgba(0, 0, 0, 0.3);
+  /* Changed in other palettes other than light-mode and affects the border of each item in the carousel */
+  --func-card-border: var(--func-transparent);
+  /* provides customized circular border for buttons */
+  --func-circular-border: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%23000000FF' stroke-width='1' stroke-dasharray='7' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
 
   --logo-font: "Indie Flower";
 }
@@ -52,16 +56,17 @@ body.light {
   --func-transparent: rgba(0, 0, 0, 0);
   --func-scroll-thumb: rgba(0, 0, 0, 0.3);
   --func-card-border: var(--func-transparent);
+  --func-circular-border: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%234a2f98' stroke-width='1' stroke-dasharray='7' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
 }
 
 body.dark {
   /* Pallete - Dark blue */
-  --primary-color: #1d1b58;
-  --primary-color-light-1: #1b2a61;
-  --primary-color-dark-1: #141068;
+  --primary-color: #2e2d5b;
+  --primary-color-light-1: #333e63;
+  --primary-color-dark-1: #262366;
 
-  --secondary-color: #a6d2f7;
-  --secondary-color-dark-1: #8fb2ce;
+  --secondary-color: #bfdef7;
+  --secondary-color-dark-1: #a6bbcd;
 
   --primary-text-color-dark: #fff;
   --primary-text-color-dark-1: #eee;
@@ -70,8 +75,8 @@ body.dark {
 
   --func-transparent: rgba(0, 0, 0, 0);
   --func-scroll-thumb: rgba(255, 255, 255, 0.3);
-  /*--func-star: (...);*/
   --func-card-border: 1px solid var(--primary-text-color-dark);
+  --func-circular-border: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%23bfdef7' stroke-width='1' stroke-dasharray='7' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
 }
 
 nav {
@@ -156,11 +161,15 @@ main > div > section:first-of-type {
   font-size: 1em;
   padding: 10px;
 
+  background-color: var(--primary-text-color-light);
+  color: var(--primary-text-color-dark-1);
+
   border: 1px solid var(--secondary-color);
 }
 
 .search-bar input:focus-visible {
   outline: 1px solid var(--secondary-color);
+  background-color: var(--primary-text-color-light-1);
 }
 
 .search-bar button {
@@ -174,7 +183,7 @@ main > div > section:first-of-type {
 }
 
 .search-bar button:active {
-  background: #a696d2;
+  background: var(--primary-color-dark-1);
 }
 
 .search-bar button:focus-visible {
@@ -213,7 +222,7 @@ main > div > section:first-of-type {
   height: inherit;
 
   background-color: transparent;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%23000000FF' stroke-width='1' stroke-dasharray='7' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+  background-image: var(--func-circular-border);
   border-radius: 100%;
 
   display: flex;
@@ -285,9 +294,7 @@ main > div > section:first-of-type {
 
 .sidebar-links a {
   text-decoration: none;
-}
-
-.sidebar-links a:active {
+  color: var(--secondary-color);
 }
 
 .footnote {
@@ -308,7 +315,7 @@ main > div > section:first-of-type {
 
 .titled-banner img {
   object-fit: cover;
-  object-position: 0 17%;
+  object-position: 0 7%;
   width: 97%;
   height: 220px;
 }
@@ -412,6 +419,10 @@ main > div > section:first-of-type {
 /* The things we do for perfection */
 .carousel-title div {
   margin-top: 5px;
+}
+
+.carousel-title svg {
+  fill: var(--secondary-color);
 }
 
 .division-solid {

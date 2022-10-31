@@ -3,15 +3,19 @@ import AnimeCarouselItem from "./AnimeCarouselItem";
 const AnimeCarousel = ({ title, callback }) => {
   const items = [];
 
+  let key = 1; //TODO: Temporary Key; Remove this.
+
   items.push(
     <AnimeCarouselItem
       genre={["Psychological horror", "comedy", "romance"]}
+      img="https://i7.xem-truyen.com/manga/19/19587/11.thumb_500x.jpg"
       onClick={callback}
+      key={key++}
     />
   );
 
   for (let i = 0; i < 8; i++) {
-    items.push(<AnimeCarouselItem />);
+    items.push(<AnimeCarouselItem key={key++} />);
   }
 
   return (

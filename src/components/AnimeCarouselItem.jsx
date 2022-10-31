@@ -52,12 +52,12 @@ class AnimeCarouselItem extends Component {
   }
 
   render() {
-    const { title, imglink, starCallback, genre } = this.props;
+    const { title, img, starCallback, genre } = this.props;
     const starState = this.state.starState;
     return (
-      <li>
-        <div onClick={this.toAnimeInfo}>
-          <img alt="anime frame" src={imglink}></img>
+      <li onClick={this.toAnimeInfo}>
+        <div>
+          <img alt="anime frame" src={img}></img>
           <div className="carousel-title">
             <h2>{title}</h2>
             <div
@@ -83,7 +83,8 @@ class AnimeCarouselItem extends Component {
 
 AnimeCarouselItem.defaultProps = {
   title: "That time I got reincarnated as an anime title",
-  imglink:
+  img:
+    // "https://i7.xem-truyen.com/manga/19/19587/11.thumb_500x.jpg",
     "https://i.pinimg.com/736x/31/76/fd/3176fda4e0f16e61b83833ad2e7838b1.jpg",
   starred: true,
   starCallback: (val) => {
