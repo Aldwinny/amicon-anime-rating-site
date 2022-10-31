@@ -37,6 +37,8 @@ body {
   background: var(--primary-text-color-light);
   color: var(--primary-text-color-dark);
   overflow-x: hidden;
+
+  transition-duration: 100ms;
 }
 
 body.light {
