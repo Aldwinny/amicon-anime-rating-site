@@ -7,6 +7,7 @@ import {
 } from "react-icons/bs";
 
 import SidebarListItem from "../components/SidebarListItem";
+import SidebarListLink from "../components/SidebarListLink";
 
 const Sidebar = () => {
   /**
@@ -25,8 +26,8 @@ const Sidebar = () => {
         <SidebarListItem text="Rated" icon={<BsFillStarFill />} />
       </ul>
       <ul className="sidebar-links">
-        <li>About</li>
-        <li>Contact us</li>
+        <SidebarListLink>About</SidebarListLink>
+        <SidebarListLink>Contact Us</SidebarListLink>
       </ul>
       <p className="footnote">
         &copy; 2022 Amicon inc.

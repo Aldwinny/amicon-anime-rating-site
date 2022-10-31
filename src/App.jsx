@@ -3,11 +3,22 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./shared/Header";
 import Home from "./pages/Home";
 import AnimeInfo from "./pages/AnimeInfo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ErrorPage from "./pages/ErrorPage";
+
+import { PALETTE, setPalette } from "./shared/Palette";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
+
+  const setDarkModeCallback = () => {
+    setDarkMode(!darkMode);
+    if (darkMode) {
+      setPalette(PALETTE.DARK);
+    } else {
+      setPalette(PALETTE.LIGHT);
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -31,9 +42,9 @@ function App() {
     target !== null ? navigate("/info") : navigate("/info/" + target);
   };
 
-  const setDarkModeCallback = () => {
-    setDarkMode(!darkMode);
-  };
+  useEffect(() => {
+    console.log("Hello!");
+  });
 
   return (
     <>

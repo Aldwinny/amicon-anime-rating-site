@@ -1,4 +1,5 @@
 import AnimeCarousel from "../components/AnimeCarousel";
+import TitledBanner from "../components/TitledBanner";
 import Sidebar from "../shared/Sidebar";
 
 const Home = ({ callbacks }) => {
@@ -6,9 +7,9 @@ const Home = ({ callbacks }) => {
     <>
       <Sidebar />
       <div className="content">
-        <AnimeCarousel title="New" callback={callbacks.AnimeInfo} />
-        <AnimeCarousel title="latest" />
-        <AnimeCarousel title="Horror" />
+        <TitledBanner title="" />
+        <AnimeCarousel title="My Collection" callback={callbacks.AnimeInfo} />
+        <AnimeCarousel title="Recommended" callback={callbacks.AnimeInfo} />
       </div>
     </>
   );

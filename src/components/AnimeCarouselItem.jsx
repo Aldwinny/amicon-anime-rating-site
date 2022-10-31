@@ -52,7 +52,7 @@ class AnimeCarouselItem extends Component {
   }
 
   render() {
-    const { title, imglink, starCallback, genre, onClick } = this.props;
+    const { title, imglink, starCallback, genre } = this.props;
     const starState = this.state.starState;
     return (
       <li>
