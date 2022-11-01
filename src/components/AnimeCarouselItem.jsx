@@ -1,8 +1,6 @@
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Chips from "./Chips";
 import { Component } from "react";
-
-const STAR_COLOR = "#4a2f98";
+import FavoriteStar from "./FavoriteStar";
 
 // const AnimeCarouselItem = ({
 //   title,
@@ -54,24 +52,20 @@ class AnimeCarouselItem extends Component {
   render() {
     const { title, img, starCallback, genre } = this.props;
     const starState = this.state.starState;
+
     return (
-      <li onClick={this.toAnimeInfo}>
+      <li onClick={this.toAnimeInfo} tabIndex={0}>
         <div>
           <img alt="anime frame" src={img}></img>
           <div className="carousel-title">
             <h2>{title}</h2>
-            <div
+            <FavoriteStar
               onClick={() => {
                 starCallback();
                 this.setState({ starState: !starState });
               }}
-            >
-              {starState ? (
-                <AiFillStar color={STAR_COLOR} />
-              ) : (
-                <AiOutlineStar color={STAR_COLOR} />
-              )}
-            </div>
+              state={starState}
+            />
           </div>
           <Chips items={genre} />
           <p>Do we even have descriptions or something?</p>
@@ -86,7 +80,7 @@ AnimeCarouselItem.defaultProps = {
   img:
     // "https://i7.xem-truyen.com/manga/19/19587/11.thumb_500x.jpg",
     "https://i.pinimg.com/736x/31/76/fd/3176fda4e0f16e61b83833ad2e7838b1.jpg",
-  starred: true,
+  starred: false,
   starCallback: (val) => {
     console.log(`TEMP_LOG: Changed star state to ${val}`);
   },

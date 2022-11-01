@@ -3,20 +3,41 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./shared/Header";
 import Home from "./pages/Home";
 import AnimeInfo from "./pages/AnimeInfo";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import ErrorPage from "./pages/ErrorPage";
 
 import { PALETTE, setPalette } from "./shared/Palette";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  let mode = useRef(null);
+
+  // Resolve dark mode from localStorage (in order to persist across reloads & provide uniqueness to the user PC)
+  if (mode.current === null) {
+    let ls = localStorage.getItem("mode");
+    console.log(ls);
+    mode.current = ls ?? PALETTE.LIGHT;
+    setPalette(mode.current);
+
+    if (ls === null) {
+      localStorage.setItem("mode", PALETTE.LIGHT);
+    }
+  }
+
+  useEffect(() => {
+    console.log("Hello!");
+  });
+
+  const [darkMode, setDarkMode] = useState(mode.current);
 
   const setDarkModeCallback = () => {
-    setDarkMode(!darkMode);
-    if (darkMode) {
+    if (darkMode === PALETTE.LIGHT) {
+      localStorage.setItem("mode", PALETTE.DARK);
       setPalette(PALETTE.DARK);
+      setDarkMode(PALETTE.DARK);
     } else {
+      localStorage.setItem("mode", PALETTE.LIGHT);
       setPalette(PALETTE.LIGHT);
+      setDarkMode(PALETTE.LIGHT);
     }
   };
 
@@ -41,10 +62,6 @@ function App() {
 
     target !== null ? navigate("/info") : navigate("/info/" + target);
   };
-
-  useEffect(() => {
-    console.log("Hello!");
-  });
 
   return (
     <>

@@ -65,7 +65,7 @@ body.dark {
   /* Pallete - Dark blue */
   --primary-color: #2e2d5b;
   --primary-color-light-1: #333e63;
-  --primary-color-dark-1: #262366;
+  --primary-color-dark-1: #211e57;
 
   --secondary-color: #bfdef7;
   --secondary-color-dark-1: #a6bbcd;
@@ -137,8 +137,16 @@ aside {
   flex-direction: column;
 }
 
-main > div > section:first-of-type {
+main > div {
   padding-top: 15px;
+}
+
+main > div.unpadded {
+  padding: 0;
+}
+
+main > div.opened {
+  margin: 0;
 }
 
 .logo {
@@ -276,6 +284,10 @@ main > div > section:first-of-type {
   color: var(--primary-text-color-dark-1);
 }
 
+.sidebar-items a:focus-visible {
+  outline: 3px solid var(--secondary-color);
+}
+
 .sidebar-items div {
   display: inline-block;
   vertical-align: top;
@@ -319,11 +331,51 @@ main > div > section:first-of-type {
   object-fit: cover;
   object-position: 0 7%;
   width: 97%;
-  height: 220px;
+  height: 31vh;
+}
+
+main > div.unpadded .titled-banner {
+  margin: 0;
+}
+
+main > div.unpadded .titled-banner img {
+  width: 100%;
+}
+
+.transform-40 {
+  transform: translateY(-150px);
+}
+
+.titled-image {
+  display: flex;
+  align-items: center;
+  margin-right: 20%;
+}
+
+.titled-image :not(img) {
+  transform: translateY(10px);
+  vertical-align: middle;
+}
+
+.titled-image p {
+  margin: 0 20px 0 10px;
+  font-size: 1.7em;
+  text-align: justify;
+  transform: translateY(37px);
+}
+
+.titled-image > div {
+  font-size: 1.7em;
+}
+
+.titled-image img {
+  width: 200px;
+  flex-shrink: 0;
 }
 
 .carousel-wrapper,
-.titled-banner {
+.titled-banner,
+.titled-image {
   margin-left: 30px;
 }
 
@@ -451,6 +503,10 @@ main > div > section:first-of-type {
 
 .chips {
   padding: 0 1px;
+}
+
+.chips > li:focus-within {
+  outline: 3px solid var(--secondary-color-dark-1);
 }
 
 .chips > * {

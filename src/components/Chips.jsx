@@ -6,7 +6,7 @@ const Chips = ({ items }) => {
           <li>none</li>
         ) : (
           items.map((item) => {
-            return <li>{item}</li>;
+            return <li tabIndex={0}>{item}</li>;
           })
         )}
       </ul>

@@ -8,6 +8,7 @@ import { FaStar } from "react-icons/fa";
 
 import Searchbar from "../components/Searchbar";
 import ActionButton from "../components/ActionButton";
+import { PALETTE } from "./Palette";
 
 /*
  * Navbar will have
@@ -32,7 +33,9 @@ const Header = ({ isDark, darkModeCallback }) => {
           </li>
           <li>
             <ActionButton
-              content={isDark ? <BsMoonFill /> : <BsSunFill />}
+              content={
+                isDark === PALETTE.LIGHT ? <BsMoonFill /> : <BsSunFill />
+              }
               action={darkModeCallback}
             />
           </li>
