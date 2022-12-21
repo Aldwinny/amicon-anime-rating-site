@@ -226,11 +226,16 @@ main > div.unpadded {
   }
 }
 
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
+  body,
+  aside,
   main > div.content,
-  aside {
-    transition-duration: 400ms;
-    transition-timing-function: ease;
+  .fancy-btn > div,
+  .fancy-btn > div *,
+  .carousel-items > li,
+  .carousel-title h2 {
+    transition-duration: 0ms !important;
+    transition-timing-function: initial;
   }
 }
 
