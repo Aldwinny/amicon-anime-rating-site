@@ -14,12 +14,17 @@ function App() {
   // Resolve dark mode from localStorage (in order to persist across reloads & provide uniqueness to the user PC)
   if (mode.current === null) {
     let ls = localStorage.getItem("mode");
-    console.log(ls);
-    mode.current = ls ?? PALETTE.LIGHT;
+
+    mode.current =
+      ls ??
+      (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)")
+        ? PALETTE.DARK
+        : PALETTE.LIGHT);
+
     setPalette(mode.current);
 
     if (ls === null) {
-      localStorage.setItem("mode", PALETTE.LIGHT);
+      localStorage.setItem("mode", mode.current);
     }
   }
 

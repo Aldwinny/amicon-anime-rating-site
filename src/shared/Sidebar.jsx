@@ -16,6 +16,7 @@ const Sidebar = () => {
   return (
     <aside>
       <ul className="sidebar-items">
+        <li className="logo">Amicon</li>
         <SidebarListItem text="Genres" icon={<BsArchiveFill />} />
         <SidebarListItem text="History" icon={<BsFillClockFill />} />
         <SidebarListItem

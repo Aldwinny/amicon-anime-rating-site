@@ -5,10 +5,13 @@ import {
   BsArchiveFill,
 } from "react-icons/bs";
 import { FaStar } from "react-icons/fa";
+import { useState } from "react";
 
 import Searchbar from "../components/Searchbar";
 import ActionButton from "../components/ActionButton";
 import { PALETTE } from "./Palette";
+import { BiArrowBack, BiMenu } from "react-icons/bi";
+import { useEffect } from "react";
 
 /*
  * Navbar will have
@@ -23,10 +26,29 @@ import { PALETTE } from "./Palette";
  */
 
 const Header = ({ isDark, darkModeCallback }) => {
+  const [menu, setMenu] = useState(false);
+
+  const openMenu = () => {
+    document.getElementsByTagName("aside")[0].classList.toggle("open");
+    setMenu(!menu);
+  };
+
+  useEffect(() => {
+    if (menu) {
+      document.getElementsByTagName("aside")[0].classList.add("open");
+    }
+  });
+
   return (
     <header>
       <nav>
         <ul>
+          <li className="burger-menu">
+            <ActionButton
+              action={openMenu}
+              content={menu ? <BiArrowBack /> : <BiMenu />}
+            />
+          </li>
           <li className="logo">Amicon</li>
           <li className="search-bar-container">
             <Searchbar />
