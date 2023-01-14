@@ -43,14 +43,14 @@ const Header = ({ isDark, darkModeCallback }) => {
     <header>
       <nav>
         <ul>
-          <li className="burger-menu">
+          <li className="pc:hidden">
             <ActionButton
               action={openMenu}
               content={menu ? <BiArrowBack /> : <BiMenu />}
             />
           </li>
           <li className="logo">Amicon</li>
-          <li className="search-bar-container">
+          <li className="m-auto">
             <Searchbar />
           </li>
           <li>

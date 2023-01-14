@@ -1,5 +1,6 @@
 import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
+import { IconContext } from "react-icons";
 
 const Searchbar = () => {
   const [query, setQuery] = useState("");
@@ -24,13 +25,13 @@ const Searchbar = () => {
 
   return (
     <form
-      className="search-bar"
+      className="search-bar flex h-10"
       onSubmit={(e) => {
         e.preventDefault();
       }}
     >
       <input type="text" onChange={onChange} value={`${query}`} />
-      <button type="submit">
+      <button type="submit" className="">
         <BiSearch />
       </button>
     </form>
