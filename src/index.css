@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   /* Pallete - Light purple */
@@ -398,9 +401,9 @@ main > div.unpadded {
 
 .sidebar-items a {
   color: var(--secondary-color-dark-1);
-  display: block;
+  /* display: block;
   padding: 10px 5px 10px 5px;
-  border-radius: 5px;
+  border-radius: 5px; */
 }
 
 .sidebar-items li:hover {
@@ -415,44 +418,44 @@ main > div.unpadded {
   outline: 3px solid var(--secondary-color);
 }
 
-.sidebar-items div {
+/* .sidebar-items div {
   display: inline-block;
   vertical-align: top;
   font-weight: 600;
 
   margin-left: 20px;
-}
+} */
 
-.sidebar-items svg {
+/* .sidebar-items svg {
   width: 20px;
   height: auto;
-}
+} */
 
-.sidebar-links {
+/* .sidebar-links {
   font-weight: 600;
   margin-top: auto;
-}
+} */
 
 .sidebar-links a {
   text-decoration: none;
   color: var(--secondary-color);
 }
 
-.footnote {
+/* .footnote {
   margin-bottom: 95px;
-}
+} */
 
-.sidebar-items,
+/* .sidebar-items,
 .sidebar-links {
   padding-left: 0;
   list-style-type: none;
-}
+} */
 
-.sidebar-links li,
+/* .sidebar-links li,
 .sidebar-items li,
 .footnote {
   padding-left: 20px;
-}
+} */
 
 .titled-banner img {
   object-fit: cover;

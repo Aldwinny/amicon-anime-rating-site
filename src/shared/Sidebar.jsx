@@ -14,10 +14,14 @@ const Sidebar = () => {
    * Fix Patterns -> new JSX element
    */
   return (
-    <aside>
+    <aside className="pl-5">
       <ul className="sidebar-items">
         <li className="logo">Amicon</li>
-        <SidebarListItem text="Genres" icon={<BsArchiveFill />} />
+        <SidebarListItem
+          text="Genres"
+          className="trans"
+          icon={<BsArchiveFill />}
+        />
         <SidebarListItem text="History" icon={<BsFillClockFill />} />
         <SidebarListItem
           text="Collections"
@@ -26,11 +30,11 @@ const Sidebar = () => {
         <SidebarListItem text="Favorites" icon={<BsFillHeartFill />} />
         <SidebarListItem text="Rated" icon={<BsFillStarFill />} />
       </ul>
-      <ul className="sidebar-links">
+      <ul className="mt-auto font-semibold">
         <SidebarListLink>About</SidebarListLink>
         <SidebarListLink>Contact Us</SidebarListLink>
       </ul>
-      <p className="footnote">
+      <p className="mb-24">
         &copy; 2022 Amicon inc.
         <br />
         Not a real company
