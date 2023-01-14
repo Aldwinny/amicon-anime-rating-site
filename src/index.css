@@ -11,9 +11,10 @@
 
   --primary-text-color-dark: #333;
   --primary-text-color-dark-1: #222;
+  --primary-text-color-dark-2: #111;
   --primary-text-color-light: #fff;
   --primary-text-color-light-1: #eee;
-
+  --primary-text-color-light-2: #ccc;
   /* Used in customized horizontal scroller to make the thumb transparent */
   --func-transparent: rgba(0, 0, 0, 0);
   /* Used in customized horizontal scroller to give the thumb color */
@@ -52,8 +53,10 @@ body.light {
 
   --primary-text-color-dark: #333;
   --primary-text-color-dark-1: #222;
+  --primary-text-color-dark-2: #111;
   --primary-text-color-light: #fff;
   --primary-text-color-light-1: #eee;
+  --primary-text-color-light-2: #ccc;
 
   --func-transparent: rgba(0, 0, 0, 0);
   --func-scroll-thumb: rgba(0, 0, 0, 0.3);
@@ -72,8 +75,10 @@ body.dark {
 
   --primary-text-color-dark: #fff;
   --primary-text-color-dark-1: #eee;
+  --primary-text-color-dark-2: #ccc;
   --primary-text-color-light: #333;
   --primary-text-color-light-1: #222;
+  --primary-text-color-light-2: #111;
 
   --func-transparent: rgba(0, 0, 0, 0);
   --func-scroll-thumb: rgba(255, 255, 255, 0.3);
@@ -196,7 +201,7 @@ main > div.unpadded {
   background-color: initial;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1020px) {
   main > div.content {
     margin-left: 0;
   }
@@ -223,6 +228,46 @@ main > div.unpadded {
 
   .burger-menu {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .titled-image {
+    position: relative;
+    top: -140px;
+
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 10px;
+  }
+
+  .titled-image img {
+    width: 200px !important;
+  }
+
+  .titled-image .title-text {
+    font-size: 0.7em !important;
+  }
+
+  .titled-image .description-text {
+    font-size: 0.6em !important;
+  }
+
+  .titled-image > :first-child {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .titled-image .star {
+    transform: none !important;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .titled-image img {
+    width: 150px !important;
   }
 }
 
@@ -424,26 +469,37 @@ main > div.unpadded .titled-banner img {
   width: 100%;
 }
 
-.transform-40 {
-  transform: translateY(-150px);
-}
-
 .titled-image {
   display: flex;
-  align-items: center;
-  margin-right: 20%;
+  align-items: flex-start;
+  margin: 20px 30px 20px 30px;
 }
 
-.titled-image :not(img) {
-  transform: translateY(10px);
+.titled-image > :first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.titled-image > :last-child {
+  display: flex;
+}
+
+.titled-image .star {
+  transform: translateY(-3px);
   vertical-align: middle;
 }
 
-.titled-image p {
-  margin: 0 20px 0 10px;
-  font-size: 1.7em;
+.titled-image .title-text {
+  margin: 0 20px;
+  font-size: 1em;
   text-align: justify;
-  transform: translateY(37px);
+}
+
+.titled-image .description-text {
+  color: var(--primary-text-color-dark-2);
+  margin: 15px 20px;
+  font-size: 0.7em;
+  text-align: justify;
 }
 
 .titled-image > div {

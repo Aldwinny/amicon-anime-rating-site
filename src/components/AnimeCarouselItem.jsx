@@ -46,17 +46,24 @@ class AnimeCarouselItem extends Component {
   }
 
   toAnimeInfo(e) {
-    this.props.onClick(e);
+    let params = {
+      title: this.props.title,
+      description: this.props.description,
+      alt: this.props.alt,
+      src: this.props.src,
+      starred: this.props.starred,
+    };
+    this.props.onClick(e, params);
   }
 
   render() {
-    const { title, img, starCallback, genre } = this.props;
+    const { title, src, starCallback, genre } = this.props;
     const starState = this.state.starState;
 
     return (
       <li onClick={this.toAnimeInfo} tabIndex={0}>
         <div>
-          <img alt="anime frame" src={img}></img>
+          <img alt="anime frame" src={src}></img>
           <div className="carousel-title">
             <h2>{title}</h2>
             <FavoriteStar
@@ -76,8 +83,10 @@ class AnimeCarouselItem extends Component {
 }
 
 AnimeCarouselItem.defaultProps = {
-  title: "That time I got reincarnated as an anime title",
-  img:
+  title: "An unknown error has occurred. Title not found.",
+  description: "An unknown error has occurred. Description not found.",
+  alt: "Default Image",
+  src:
     // "https://i7.xem-truyen.com/manga/19/19587/11.thumb_500x.jpg",
     "https://i.pinimg.com/736x/31/76/fd/3176fda4e0f16e61b83833ad2e7838b1.jpg",
   starred: false,
@@ -85,7 +94,7 @@ AnimeCarouselItem.defaultProps = {
     console.log(`TEMP_LOG: Changed star state to ${val}`);
   },
   onClick: () => {
-    console.log("No acction added.");
+    console.log("No action added.");
   },
   genre: [],
 };

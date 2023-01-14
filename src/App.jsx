@@ -33,6 +33,7 @@ function App() {
   });
 
   const [darkMode, setDarkMode] = useState(mode.current);
+  const [animeInfoElement, setAnimeInfoElement] = useState(<AnimeInfo />);
 
   const setDarkModeCallback = () => {
     if (darkMode === PALETTE.LIGHT) {
@@ -48,7 +49,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  const animeInfoOnClick = (event, target) => {
+  const animeInfoOnClick = (event, params, target) => {
     let testArray = [
       document.querySelector(".carousel-title>div"),
       document.querySelector(".chips"),
@@ -56,6 +57,7 @@ function App() {
 
     let el = event.target;
 
+    // Check which element was clicked
     if (
       el === testArray[0] ||
       el === testArray[1] ||
@@ -65,7 +67,12 @@ function App() {
       return;
     }
 
-    target !== null ? navigate("/info") : navigate("/info/" + target);
+    if (target !== null) {
+      setAnimeInfoElement(<AnimeInfo title={params.title} />);
+      navigate("/info");
+    } else {
+      navigate("/info/" + target);
+    }
   };
 
   return (
@@ -77,7 +84,7 @@ function App() {
             path="/"
             element={<Home callbacks={{ AnimeInfo: animeInfoOnClick }} />}
           />
-          <Route path="/info" element={<AnimeInfo />} />
+          <Route path="/info" element={animeInfoElement} />
           <Route path="/u/genres" element={<ErrorPage />} />
           <Route path="/u/history" element={<ErrorPage />} />
           <Route path="/u/collections" element={<ErrorPage />} />

@@ -3,7 +3,11 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 const FavoriteStar = ({ onClick, state }) => {
   return (
     <div onClick={onClick} tabIndex={0}>
-      {state ? <AiFillStar /> : <AiOutlineStar />}
+      {state ? (
+        <AiFillStar className="star" />
+      ) : (
+        <AiOutlineStar className="star" />
+      )}
     </div>
   );
 };
