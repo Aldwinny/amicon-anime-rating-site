@@ -52,6 +52,7 @@ class AnimeCarouselItem extends Component {
       alt: this.props.alt,
       src: this.props.src,
       starred: this.props.starred,
+      genre: this.props.genre,
     };
     this.props.onClick(e, params);
   }

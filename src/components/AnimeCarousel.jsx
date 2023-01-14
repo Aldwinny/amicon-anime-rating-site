@@ -7,7 +7,13 @@ const AnimeCarousel = ({ title, callback }) => {
 
   items.push(
     <AnimeCarouselItem
-      genre={["Psychological horror", "comedy", "romance"]}
+      genre={[
+        "Psychological horror",
+        "comedy",
+        "romance",
+        "romance",
+        "romance",
+      ]}
       src="https://i7.xem-truyen.com/manga/19/19587/11.thumb_500x.jpg"
       onClick={callback}
       key={key++}

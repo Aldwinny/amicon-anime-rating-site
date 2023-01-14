@@ -1,8 +1,9 @@
 import TitledBanner from "../components/TitledBanner";
 import FavoriteStar from "../components/FavoriteStar";
 import Sidebar from "../shared/Sidebar";
+import Chips from "../components/Chips";
 
-const AnimeInfo = ({ title, description, src, alt, starred }) => {
+const AnimeInfo = ({ title, description, genre, src, alt, starred }) => {
   if (title === AnimeInfo.defaultProps.title) {
     // window.location.href = "/";
   }
@@ -15,6 +16,7 @@ const AnimeInfo = ({ title, description, src, alt, starred }) => {
           <div className="titled-image">
             <div>
               <img src={src} alt={alt ?? title + " cover"}></img>
+              <Chips items={genre} />
             </div>
             <div>
               <div>
@@ -35,6 +37,7 @@ AnimeInfo.defaultProps = {
   description: "An unknown error has occurred. Description not found.",
   src: "https://i.pinimg.com/736x/31/76/fd/3176fda4e0f16e61b83833ad2e7838b1.jpg",
   starred: false,
+  genre: [],
 };
 
 export default AnimeInfo;

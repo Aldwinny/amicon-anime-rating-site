@@ -3,7 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./shared/Header";
 import Home from "./pages/Home";
 import AnimeInfo from "./pages/AnimeInfo";
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import ErrorPage from "./pages/ErrorPage";
 
 import { PALETTE, setPalette } from "./shared/Palette";
@@ -72,6 +72,7 @@ function App() {
         <AnimeInfo
           title={params.title}
           description={params.description}
+          genre={params.genre}
           src={params.src}
           alt={params.alt}
           starred={params.starred}

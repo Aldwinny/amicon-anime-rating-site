@@ -509,6 +509,7 @@ main > div.unpadded .titled-banner img {
 .titled-image img {
   width: 200px;
   flex-shrink: 0;
+  border: 1px solid var(--primary-color);
 }
 
 .carousel-wrapper,
@@ -517,10 +518,12 @@ main > div.unpadded .titled-banner img {
   margin-left: 30px;
 }
 
-.carousel-wrapper ul {
+.carousel-wrapper > ul {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .carousel-wrapper li {
@@ -528,7 +531,6 @@ main > div.unpadded .titled-banner img {
 }
 
 .carousel-items {
-  overflow-x: scroll;
   border-color: var(--func-transparent);
 
   transition: border-color 300ms;
@@ -628,6 +630,7 @@ main > div.unpadded .titled-banner img {
 .chips-wrapper {
   overflow-y: hidden;
   overflow-x: scroll;
+  height: 32px;
 
   border-color: var(--func-transparent);
   transition: border-color 300ms;
@@ -640,7 +643,9 @@ main > div.unpadded .titled-banner img {
 }
 
 .chips {
+  display: flex;
   padding: 0 1px;
+  justify-content: left !important;
 }
 
 .chips > li:focus-within {
