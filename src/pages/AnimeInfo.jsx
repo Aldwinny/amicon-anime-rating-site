@@ -4,7 +4,7 @@ import Sidebar from "../shared/Sidebar";
 
 const AnimeInfo = ({ title, description, src, alt, starred }) => {
   if (title === AnimeInfo.defaultProps.title) {
-    window.location.href = "/";
+    // window.location.href = "/";
   }
   return (
     <>

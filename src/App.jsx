@@ -7,6 +7,7 @@ import { useEffect, useState, useRef } from "react";
 import ErrorPage from "./pages/ErrorPage";
 
 import { PALETTE, setPalette } from "./shared/Palette";
+import { useLayoutEffect } from "react";
 
 function App() {
   let mode = useRef(null);
@@ -28,11 +29,8 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    console.log("Hello!");
-  });
-
   const [darkMode, setDarkMode] = useState(mode.current);
+  const [navigateTo, setNavigateTo] = useState(null);
   const [animeInfoElement, setAnimeInfoElement] = useState(<AnimeInfo />);
 
   const setDarkModeCallback = () => {
@@ -50,6 +48,8 @@ function App() {
   const navigate = useNavigate();
 
   const animeInfoOnClick = (event, params, target) => {
+    let navigate = "/info";
+
     let testArray = [
       document.querySelector(".carousel-title>div"),
       document.querySelector(".chips"),
@@ -68,12 +68,27 @@ function App() {
     }
 
     if (target !== null) {
-      setAnimeInfoElement(<AnimeInfo title={params.title} />);
-      navigate("/info");
+      setAnimeInfoElement(
+        <AnimeInfo
+          title={params.title}
+          description={params.description}
+          src={params.src}
+          alt={params.alt}
+          starred={params.starred}
+        />
+      );
     } else {
-      navigate("/info/" + target);
+      navigate = navigate + "/" + target;
     }
+    setNavigateTo(navigate);
   };
+
+  useLayoutEffect(() => {
+    if (navigateTo !== null) {
+      navigate(navigateTo);
+      setNavigateTo(null);
+    }
+  });
 
   return (
     <>
