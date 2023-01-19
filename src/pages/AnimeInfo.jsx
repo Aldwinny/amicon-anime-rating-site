@@ -4,7 +4,11 @@ import Sidebar from "../shared/Sidebar";
 import Chips from "../components/Chips";
 
 const AnimeInfo = ({ title, description, genre, src, alt, starred }) => {
+  // LEARN HOW TO SUSTAIN DATA AFTER EACH PAGE RELOAD
+
   if (title === AnimeInfo.defaultProps.title) {
+    console.log(title);
+    console.log(AnimeInfo.defaultProps.title);
     // window.location.href = "/";
   }
   return (

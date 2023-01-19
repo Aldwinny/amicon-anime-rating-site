@@ -3,8 +3,10 @@ import {
   BsFillClockFill,
   BsFillCollectionPlayFill,
   BsFillHeartFill,
+  BsFillPersonFill,
   BsFillStarFill,
 } from "react-icons/bs";
+import Logo from "../components/Logo";
 
 import SidebarListItem from "../components/SidebarListItem";
 import SidebarListLink from "../components/SidebarListLink";
@@ -15,7 +17,7 @@ const Sidebar = () => {
    */
   return (
     <aside>
-      <div className="logo pt-2 text-center pc:hidden">Amicon</div>
+      <Logo className="pt-2 text-center pc:hidden" />
       <ul className="pl-5 mt-0 pc:mt-3">
         <SidebarListItem
           text="Genres"
@@ -29,6 +31,7 @@ const Sidebar = () => {
         />
         <SidebarListItem text="Favorites" icon={<BsFillHeartFill />} />
         <SidebarListItem text="Rated" icon={<BsFillStarFill />} />
+        <SidebarListItem text="Account" icon={<BsFillPersonFill />} />
       </ul>
       <ul className="mt-auto font-semibold pl-5 mb-4 mt-9">
         <SidebarListLink>About</SidebarListLink>

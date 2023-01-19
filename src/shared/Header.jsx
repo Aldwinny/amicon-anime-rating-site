@@ -12,6 +12,7 @@ import ActionButton from "../components/ActionButton";
 import { PALETTE } from "./Palette";
 import { BiArrowBack, BiMenu } from "react-icons/bi";
 import { useEffect } from "react";
+import Logo from "../components/Logo";
 
 /*
  * Navbar will have
@@ -49,7 +50,9 @@ const Header = ({ isDark, darkModeCallback }) => {
               content={menu ? <BiArrowBack /> : <BiMenu />}
             />
           </li>
-          <li className="logo">Amicon</li>
+          <li>
+            <Logo />
+          </li>
           <li className="m-auto">
             <Searchbar />
           </li>

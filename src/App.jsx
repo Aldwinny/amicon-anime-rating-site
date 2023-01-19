@@ -106,6 +106,9 @@ function App() {
           <Route path="/u/collections" element={<ErrorPage />} />
           <Route path="/u/favorites" element={<ErrorPage />} />
           <Route path="/u/rated" element={<ErrorPage />} />
+          <Route path="/u/account" element={<ErrorPage />} />
+          <Route path="/u/signin" element={<ErrorPage />} />
+          <Route path="/u/signup" element={<ErrorPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
