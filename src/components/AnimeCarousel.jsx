@@ -30,9 +30,10 @@ const AnimeCarousel = ({ title, callback }) => {
 
   return (
     <section className="carousel-wrapper">
-      <h1>{title ?? "AnimeCarousel"}</h1>
-      <div className="division-solid"></div>
-      <ul className="carousel-items">
+      <h1 className="text-2xl mt-5 mb-3 pb-5 mx-9 border-b">
+        {title ?? "AnimeCarousel"}
+      </h1>
+      <ul className="carousel-items mx-1">
         {/* This should be a list UL & LI */}
 
         {items}
